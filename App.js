@@ -8,7 +8,7 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import {AppContainer} from './navigator/AppNavigator';
+import AppContainer from './navigator/AppNavigator.js';
 
 type Props = {};
 export default class App extends Component<Props> {
