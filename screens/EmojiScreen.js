@@ -62,15 +62,15 @@ export default class EmojiScreen extends React.Component {
       [
         {
           emotionName: 'cool',
-          image: require ('../assets/img/sleep.png'),
+          image: require ('../assets/img/sad1.png'),
         },
         {
           emotionName: 'cool',
-          image: require ('../assets/img/thinking.png'),
+          image: require ('../assets/img/zipped.png'),
         },
         {
           emotionName: 'cool',
-          image: require ('../assets/img/scream.png'),
+          image: require ('../assets/img/straight.png'),
         },
       ],
     ],
