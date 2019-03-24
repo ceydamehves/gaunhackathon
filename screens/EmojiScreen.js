@@ -23,6 +23,10 @@ export default class EmojiScreen extends React.Component {
           emotionName: 'laughing',
           image: require ('../assets/img/laughing1.png'),
         },
+        {
+          emotionName: 'happy',
+          image: require ('../assets/img/happy.png'),
+        },
       ],
       //satir 2
       [
@@ -31,17 +35,12 @@ export default class EmojiScreen extends React.Component {
           image: require ('../assets/img/in-love.png'),
         },
         {
-          emotionName: 'happy',
-          image: require ('../assets/img/happy.png'),
-        },
-      ],
-      //satir 3
-      [
-        {
           emotionName: 'cool',
           image: require ('../assets/img/cool.png'),
         },
       ],
+      //satir 3
+      [],
     ],
   };
   render () {
@@ -50,6 +49,14 @@ export default class EmojiScreen extends React.Component {
         style={styles.container}
         source={require ('../assets/img/bg.jpg')}
       >
+        <View style={styles.mapContainer}>
+          <Image
+            style={styles.map}
+            source={{
+              uri: 'https://image.maps.api.here.com/mia/1.6/mapview?app_id=hhwBjH2mzHNeXcc6oabp&app_code=givwFuDpCLJIJvW8dhu3Xg&lat=37.0311168&lon=37.3293056&h=300&w=728&z=15',
+            }}
+          />
+        </View>
         {this.state.emotions.map ((v, a) => (
           <View style={styles.satirContainer} key={a}>
             <View style={styles.buttonContainer}>
@@ -64,7 +71,6 @@ export default class EmojiScreen extends React.Component {
                   }}
                 >
                   <Image source={k.image} style={styles.img} />
-
                 </TouchableOpacity>
               ))}
             </View>
@@ -92,11 +98,18 @@ const styles = StyleSheet.create ({
   },
   button: {
     borderRadius: 80,
-    padding: 10,
-    marginBottom: 10,
+    padding: 5,
   },
   img: {
-    width: 120,
-    height: 120,
+    width: 100,
+    height: 100,
+  },
+  mapContainer: {
+    marginBottom: 30,
+  },
+  map: {
+    width: Dimensions.get ('screen').width - 50,
+    height: 250,
+    borderRadius: 9,
   },
 });
